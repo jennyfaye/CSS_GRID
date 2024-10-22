@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Fruit List</h2>
+    <form>
+      <label for="fruit">Enter a fruit: </label>&nbsp;
+      <input name="fruit" id="fruit" type="text" [(ngModel)]="fruit" />
+      <button (click)="addFruit()">Add Fruit</button>
+    </form>
+    <br>
+
+    <h3>List of Fruits</h3>
+    <div class="grid">
+      <div *ngFor="let fruit of fruitList; let i = index" class="card">
+        <div>Fruit {{ i + 1 }}</div>
+        <div>{{ fruit }}</div>
+        <div>
+          <button (click)="updateFruit(i)">Edit</button>
+          <button (click)="deleteFruit(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

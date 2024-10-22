@@ -1,1 +1,24 @@
-<p>studentlist works!</p>
+<!Doctype html>
+<html>
+  <body>
+    <h2>Student List</h2>
+    <form>
+      <label for="student">Enter a name: </label>
+      <input name="student" id="student" type="text" [(ngModel)]="student" />
+      <button (click)="addStudent()">Add Name</button>
+    </form>
+    <br>
+
+    <h3>List of Student Names</h3>
+    <div class="grid">
+      <div *ngFor="let student of studentList; let i = index" class="card">
+        <div>Student {{ i + 1 }}</div>
+        <div>{{ student }}</div>
+        <div>
+          <button (click)="updateStudent(i)">Edit</button>
+          <button (click)="deleteStudent(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

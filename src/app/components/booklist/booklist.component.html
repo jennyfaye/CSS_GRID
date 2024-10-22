@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+  <body>
+    <h2>Booklist</h2>
+    <form>
+      <label for="book">Enter a book: </label> &nbsp;
+      <input name="book" id="book" type="text" [(ngModel)]="book" />
+      <button (click)="addBook()">Add Book</button>
+    </form>
+    <br>
+
+    <h3>List of Books</h3>
+    <div class="grid">
+      <div *ngFor="let book of bookList; let i = index" class="card">
+        <div>Book {{ i + 1 }}</div>
+        <div>{{ book }}</div>
+        <div>
+          <button (click)="updateBook(i)">Edit</button>
+          <button (click)="deleteBook(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

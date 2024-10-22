@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+  <body>
+    <h2>Course List</h2>
+    <form>
+      <label for="course">Enter a course: </label>&nbsp;
+      <input name="course" id="course" type="text" [(ngModel)]="course" />
+      <button (click)="addCourse()">Add Course</button>
+    </form>
+    <br>
+
+    <h3>List of Courses</h3>
+    <div class="grid">
+      <div *ngFor="let course of courseList; let i = index" class="card">
+        <div>Course {{ i + 1 }}</div>
+        <div>{{ course }}</div>
+        <div>
+          <button (click)="updateCourse(i)">Edit</button>
+          <button (click)="deleteCourse(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

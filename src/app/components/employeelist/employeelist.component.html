@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+  <body>
+    <h2>Employee List</h2>
+    <form>
+      <label for="employee">Enter a name: </label>
+      <input name="employee" id="employee" type="text" [(ngModel)]="employee" />
+      <button (click)="addEmployee()">Add Name</button>
+    </form>
+    <br>
+
+    <h3>List of Employee Names</h3>
+    <div class="grid">
+      <div *ngFor="let employee of employeeList; let i = index" class="card">
+        <div>Employee {{ i + 1 }}</div>
+        <div>{{ employee }}</div>
+        <div>
+          <button (click)="updateEmployee(i)">Edit</button>
+          <button (click)="deleteEmployee(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
